@@ -1,7 +1,7 @@
 // src/api/animeApi.js
 import axios from "axios";
 
-const API_URL = "https://api.jikan.moe/v4"; // Jikan API base URL
+const API_URL = "https://api.jikan.moe/v4";
 
 export const searchAnime = async (query) => {
   try {

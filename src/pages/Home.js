@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Typography } from "@mui/material";
-import SearchBar from "../components/Searchbar"; // Import the SearchBar component
+import SearchBar from "../components/Searchbar";
 
 const Home = () => {
   return (

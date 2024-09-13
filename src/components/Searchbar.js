@@ -9,7 +9,7 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import { searchAnime } from "../api/animeApi"; // Your API function
+import { searchAnime } from "../api/animeApi";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -18,7 +18,7 @@ const SearchBar = () => {
   const handleSearch = async () => {
     const data = await searchAnime(query);
     if (data) {
-      setResults(data.data); // `data.data` contains the list of anime
+      setResults(data.data);
     } else {
       setResults([]);
     }

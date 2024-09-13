@@ -5,7 +5,8 @@ import Home from "./pages/Home";
 import CurrentlyWatching from "./pages/currentlyWatching";
 import Completed from "./pages/Completed";
 import Dropped from "./pages/Dropped";
-import { AnimeProvider } from "./context/AnimeContext"; // Import AnimeProvider
+import { AnimeProvider } from "./context/AnimeContext";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/completed" element={<Completed />} />
           <Route path="/dropped" element={<Dropped />} />
         </Routes>
+        <Footer />
       </Router>
     </AnimeProvider>
   );

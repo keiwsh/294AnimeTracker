@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -11,11 +11,21 @@ import { Link } from "react-router-dom";
 import GitHubIcon from "@mui/icons-material/GitHub"; // Import GitHub Icon
 
 const Navbar = () => {
+  // State to manage the hover effect
+  const [hovered, setHovered] = useState(false);
+
   return (
     <AppBar position="static" sx={{ backgroundColor: "#4bc2b4" }}>
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Kei
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1 }}
+          // Event handlers for hover effect
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          {hovered ? "Kei" : "ケイ"}
         </Typography>
         <Box sx={{ display: "flex", gap: 2 }}>
           <Button color="inherit" component={Link} to="/">

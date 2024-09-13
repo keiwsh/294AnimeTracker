@@ -78,12 +78,33 @@ const SearchBar = () => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Type anime title here..."
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "#a5eade", // Default border color
+            },
+            "&:hover fieldset": {
+              borderColor: "#4bc2b4", // Border color on hover
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#4bc2b4", // Border color when focused
+            },
+          },
+          "& .MuiInputLabel-root": {
+            color: "#a5eade", // Default label color
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#4bc2b4", // Label color when focused
+          },
+        }}
+        InputLabelProps={{
+          shrink: true, // Ensure the label is always visible when the field is focused
+        }}
       />
       <Button
         variant="contained"
-        color="primary"
         onClick={() => performSearch(query)}
-        style={{ marginTop: "10px" }}
+        sx={{ backgroundColor: "#4bc2b4", marginTop: "10px" }}
       >
         Search
       </Button>

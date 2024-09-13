@@ -1,8 +1,9 @@
+// src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import CurrentlyWatching from "./pages/currentlyWatching";
+import CurrentlyWatching from "./pages/CurrentlyWatching";
 import Completed from "./pages/Completed";
 import Dropped from "./pages/Dropped";
 

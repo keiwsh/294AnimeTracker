@@ -4,7 +4,7 @@
 
 Dieses Projekt ist ein Anime-Tracker, inspiriert von [MyAnimeList](https://myanimelist.net/). Es ermöglicht den Benutzern, zu verfolgen, welche Animes sie aktuell schauen, abgeschlossen haben oder abgebrochen haben. 
 
-Benutzer können nach Animes mithilfe einer integrierten Anime-Datenbank-API suchen und Animes zwischen verschiedenesn Listen verschieben, je nach ihrem aktuellen Status.
+Benutzer können nach Animes mithilfe einer integrierten Anime-Datenbank-API suchen und Animes zwischen verschiedenen Listen verschieben, je nach ihrem aktuellen Status.
 
 ---
 

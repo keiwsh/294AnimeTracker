@@ -8,7 +8,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import GitHubIcon from "@mui/icons-material/GitHub"; // Import GitHub Icon
+import GitHubIcon from "@mui/icons-material/Github"; // Import GitHub Icon
 
 const Navbar = () => {
   // State to manage the hover effect

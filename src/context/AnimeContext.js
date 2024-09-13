@@ -1,9 +1,9 @@
-// src/contexts/AnimeContext.js
 import React, { createContext, useState, useContext } from "react";
 
-// Create a context for anime tracking
+// Create a Context for the Anime
 const AnimeContext = createContext();
 
+// Create a Provider component
 export const AnimeProvider = ({ children }) => {
   const [animeLists, setAnimeLists] = useState({
     "Currently Watching": [],
@@ -32,5 +32,11 @@ export const AnimeProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the Anime context
-export const useAnimeContext = () => useContext(AnimeContext);
+// Custom hook for using the AnimeContext
+export const useAnimeContext = () => {
+  const context = useContext(AnimeContext);
+  if (!context) {
+    throw new Error("useAnimeContext must be used within an AnimeProvider");
+  }
+  return context;
+};

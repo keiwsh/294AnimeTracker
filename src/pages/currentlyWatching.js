@@ -5,11 +5,14 @@ import {
   List,
   ListItem,
   ListItemText,
+  IconButton,
 } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useAnimeContext } from "../context/AnimeContext";
 
 const CurrentlyWatching = () => {
-  const { animeLists } = useAnimeContext();
+  const { animeLists, removeAnime } = useAnimeContext();
+  const currentlyWatching = animeLists["Currently Watching"];
 
   return (
     <Container>
@@ -17,8 +20,11 @@ const CurrentlyWatching = () => {
         Currently Watching
       </Typography>
       <List>
-        {animeLists["Currently Watching"].map((anime) => (
-          <ListItem key={anime.mal_id}>
+        {currentlyWatching.map((anime) => (
+          <ListItem
+            key={anime.mal_id}
+            style={{ display: "flex", alignItems: "center" }}
+          >
             <div style={{ width: 60, height: 60, marginRight: 10 }}>
               <img
                 src={anime.images?.jpg?.image_url || ""}
@@ -35,6 +41,13 @@ const CurrentlyWatching = () => {
               primary={anime.title}
               secondary={`Score: ${anime.score || "N/A"}`}
             />
+            <IconButton
+              edge="end"
+              aria-label="delete"
+              onClick={() => removeAnime(anime.mal_id, "Currently Watching")}
+            >
+              <DeleteIcon />
+            </IconButton>
           </ListItem>
         ))}
       </List>

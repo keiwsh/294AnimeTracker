@@ -12,19 +12,17 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add"; // Import the add icon
+import AddIcon from "@mui/icons-material/Add";
 import { searchAnime } from "../api/animeApi";
+import { useAnimeContext } from "../context/AnimeContext";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedAnime, setSelectedAnime] = useState(null);
-  const [animeLists, setAnimeLists] = useState({
-    "Currently Watching": [],
-    Completed: [],
-    Dropped: [],
-  });
+
+  const { addAnime } = useAnimeContext(); // Access context methods
 
   // Function to perform search
   const performSearch = async (searchQuery) => {
@@ -41,11 +39,10 @@ const SearchBar = () => {
     }
   };
 
-  // Use effect to perform search whenever the query changes
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       performSearch(query);
-    }, 300); // Debounce delay (e.g., 300ms)
+    }, 300);
 
     return () => clearTimeout(delayDebounceFn);
   }, [query]);
@@ -57,10 +54,7 @@ const SearchBar = () => {
 
   const handleMenuClose = (status) => {
     if (selectedAnime) {
-      setAnimeLists((prevLists) => ({
-        ...prevLists,
-        [status]: [...prevLists[status], selectedAnime],
-      }));
+      addAnime(selectedAnime, status); // Add to the selected status
     }
     setAnchorEl(null);
     setSelectedAnime(null);
@@ -81,24 +75,24 @@ const SearchBar = () => {
         sx={{
           "& .MuiOutlinedInput-root": {
             "& fieldset": {
-              borderColor: "#a5eade", // Default border color
+              borderColor: "#a5eade",
             },
             "&:hover fieldset": {
-              borderColor: "#4bc2b4", // Border color on hover
+              borderColor: "#4bc2b4",
             },
             "&.Mui-focused fieldset": {
-              borderColor: "#4bc2b4", // Border color when focused
+              borderColor: "#4bc2b4",
             },
           },
           "& .MuiInputLabel-root": {
-            color: "#a5eade", // Default label color
+            color: "#a5eade",
           },
           "& .MuiInputLabel-root.Mui-focused": {
-            color: "#4bc2b4", // Label color when focused
+            color: "#4bc2b4",
           },
         }}
         InputLabelProps={{
-          shrink: true, // Ensure the label is always visible when the field is focused
+          shrink: true,
         }}
       />
       <Button

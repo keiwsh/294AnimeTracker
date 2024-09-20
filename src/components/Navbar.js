@@ -8,10 +8,9 @@ import {
   IconButton,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import GitHubIcon from "@mui/icons-material/GitHub"; // Import GitHub Icon
+import GitHubIcon from "@mui/icons-material/GitHub"; 
 
 const Navbar = () => {
-  // State to manage the hover effect
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -46,7 +45,7 @@ const Navbar = () => {
           href="https://github.com/keiwsh/294AnimeTracker"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ ml: 2 }} // Add margin-left for spacing
+          sx={{ ml: 2 }} 
         >
           <GitHubIcon />
         </IconButton>

@@ -9,7 +9,7 @@ import {
   Box, // Import Box
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useAnimeContext } from "../context/AnimeContext"; // Ensure the correct path
+import { useAnimeContext } from "../context/AnimeContext"; 
 
 const Completed = () => {
   const { animeLists, removeAnime } = useAnimeContext();

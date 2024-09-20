@@ -8,7 +8,6 @@ const Home = () => {
       <Container>
         <Box my={4}>
           {" "}
-          {/* Add margin using Box component */}
           <Typography variant="h4" align="center" gutterBottom>
             Welcome to Kei's Anime List Tracker
           </Typography>

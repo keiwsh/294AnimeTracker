@@ -19,7 +19,6 @@ const CurrentlyWatching = () => {
     <Container>
       <Box my={4}>
         {" "}
-        {/* Moved Box inside Container */}
         <Typography variant="h4" align="center" gutterBottom>
           Currently Watching
         </Typography>

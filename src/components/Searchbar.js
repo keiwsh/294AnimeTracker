@@ -22,7 +22,7 @@ const SearchBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedAnime, setSelectedAnime] = useState(null);
 
-  const { addAnime } = useAnimeContext(); // Access context methods
+  const { addAnime } = useAnimeContext(); 
 
   // Function to perform search
   const performSearch = async (searchQuery) => {
@@ -54,7 +54,7 @@ const SearchBar = () => {
 
   const handleMenuClose = (status) => {
     if (selectedAnime) {
-      addAnime(selectedAnime, status); // Add to the selected status
+      addAnime(selectedAnime, status);
     }
     setAnchorEl(null);
     setSelectedAnime(null);
